@@ -16,10 +16,10 @@ New-Item -ItemType Directory -Path "src/app/shared/pipes"
 New-Item -ItemType Directory -Path "src/app/shared/models"
 
 # Criar os modelos em shared
-New-Item -ItemType File -Path "src/app/shared/models/cliente.model.ts"
-New-Item -ItemType File -Path "src/app/shared/models/pedido.model.ts"
-New-Item -ItemType File -Path "src/app/shared/models/itens-pedido.model.ts"
-New-Item -ItemType File -Path "src/app/shared/models/vendedor.model.ts"
+ng generate class shared/models/cliente --type=model
+ng generate class shared/models/pedido --type=model
+ng generate class shared/models/itens-pedido --type=model
+ng generate class shared/models/vendedor --type=model
 New-Item -ItemType File -Path "src/app/shared/models/index.ts"
 
 # Criar os módulos para clientes, pedidos e vendedores e suas subpastas
@@ -30,7 +30,7 @@ New-Item -ItemType Directory -Path "src/app/modules/clientes/components/cliente-
 New-Item -ItemType Directory -Path "src/app/modules/clientes/components/cliente-update"
 New-Item -ItemType Directory -Path "src/app/modules/clientes/services"
 New-Item -ItemType Directory -Path "src/app/modules/clientes/models"
-New-Item -ItemType File -Path "src/app/modules/clientes/services/cliente.service.ts"
+ng generate service modules/clientes/services/cliente
 New-Item -ItemType File -Path "src/app/modules/clientes/models/index.ts"
 
 ng generate module modules/pedidos 
@@ -40,7 +40,7 @@ New-Item -ItemType Directory -Path "src/app/modules/pedidos/components/pedido-cr
 New-Item -ItemType Directory -Path "src/app/modules/pedidos/components/pedido-update"
 New-Item -ItemType Directory -Path "src/app/modules/pedidos/services"
 New-Item -ItemType Directory -Path "src/app/modules/pedidos/models"
-New-Item -ItemType File -Path "src/app/modules/pedidos/services/pedido.service.ts"
+ng generate service modules/pedidos/services/pedido
 New-Item -ItemType File -Path "src/app/modules/pedidos/models/index.ts"
 
 ng generate module modules/vendedores 
@@ -50,7 +50,7 @@ New-Item -ItemType Directory -Path "src/app/modules/vendedores/components/vended
 New-Item -ItemType Directory -Path "src/app/modules/vendedores/components/vendedor-update"
 New-Item -ItemType Directory -Path "src/app/modules/vendedores/services"
 New-Item -ItemType Directory -Path "src/app/modules/vendedores/models"
-New-Item -ItemType File -Path "src/app/modules/vendedores/services/vendedor.service.ts"
+ng generate service modules/vendedores/services/vendedor
 New-Item -ItemType File -Path "src/app/modules/vendedores/models/index.ts"
 
 # Criar o módulo layouts

@@ -5,47 +5,47 @@
 #!/bin/bash
 
 # Criar a pasta core e suas subpastas
-ng generate module core --module app
+ng generate module core
 mkdir -p src/app/core/services src/app/core/interceptors src/app/core/guards
 
 # Criar a pasta shared e suas subpastas
-ng generate module shared --module app
+ng generate module shared
 mkdir -p src/app/shared/components src/app/shared/directives src/app/shared/pipes src/app/shared/models
 
 # Criar os modelos em shared
-touch src/app/shared/models/cliente.model.ts
-touch src/app/shared/models/pedido.model.ts
-touch src/app/shared/models/itens-pedido.model.ts
-touch src/app/shared/models/vendedor.model.ts
+ng generate class shared/models/cliente --type=model
+ng generate class shared/models/pedido --type=model
+ng generate class shared/models/itens-pedido --type=model
+ng generate class shared/models/vendedor --type=model
 touch src/app/shared/models/index.ts
 
-# Criar os módulos para clientes, pedidos e vendedores e suas subpastas
-ng generate module modules/clientes --module app
+# Criar os módulos e services para clientes, pedidos e vendedores e suas subpastas
+ng generate module modules/clientes
 mkdir -p src/app/modules/clientes/components/cliente-list src/app/modules/clientes/components/cliente-detail src/app/modules/clientes/components/cliente-create src/app/modules/clientes/components/cliente-update src/app/modules/clientes/services src/app/modules/clientes/models
-touch src/app/modules/clientes/services/cliente.service.ts
+ng generate service modules/clientes/services/cliente
 touch src/app/modules/clientes/models/index.ts
 
-ng generate module modules/pedidos --module app
+ng generate module modules/pedidos 
 mkdir -p src/app/modules/pedidos/components/pedido-list src/app/modules/pedidos/components/pedido-detail src/app/modules/pedidos/components/pedido-create src/app/modules/pedidos/components/pedido-update src/app/modules/pedidos/services src/app/modules/pedidos/models
-touch src/app/modules/pedidos/services/pedido.service.ts
+ng generate service modules/pedidos/services/pedido
 touch src/app/modules/pedidos/models/index.ts
 
-ng generate module modules/vendedores --module app
+ng generate module modules/vendedores 
 mkdir -p src/app/modules/vendedores/components/vendedor-list src/app/modules/vendedores/components/vendedor-detail src/app/modules/vendedores/components/vendedor-create src/app/modules/vendedores/components/vendedor-update src/app/modules/vendedores/services src/app/modules/vendedores/models
-touch src/app/modules/vendedores/services/vendedor.service.ts
+ng generate service modules/vendedores/services/vendedor
 touch src/app/modules/vendedores/models/index.ts
 
 # Criar o módulo layouts
-ng generate module layouts --module app
+ng generate module layouts
 mkdir -p src/app/layouts/components
 
 # Criar o módulo pages e suas subpastas 
-ng generate module pages --module app
-ng generate module pages/home --module pages
-ng generate module pages/about --module pages
-ng generate module pages/clientes --module app/pages
-ng generate module pages/pedidos --module app/pages
-ng generate module pages/vendedores --module app/pages
+ng generate module pages
+ng generate module pages/home
+ng generate module pages/about
+ng generate module pages/clientes
+ng generate module pages/pedidos
+ng generate module pages/vendedores
 mkdir -p src/app/pages/home/components
 mkdir -p src/app/pages/about/components
 mkdir -p src/app/pages/clientes/cliente-list-page src/app/pages/clientes/cliente-detail-page src/app/pages/clientes/cliente-create-page src/app/pages/clientes/cliente-update-page
